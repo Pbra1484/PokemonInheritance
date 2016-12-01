@@ -32,6 +32,24 @@ public class PokemonPanel extends JPanel
 		super();
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
+		this.pokemonIcon = new ImageIcon(getClass().getResource(""));
+		this.updateButton = new JButton("Update");
+		this.pokedexSelector = new JComboBox(new String [] {"Latios", "Mewtwo", "Darkrai", "Entei", "Heatran"});
+		this.pokemonLabel = new JLabel("The current pokemon:", pokemonIcon, JLabel.CENTER);
+		this.healthLabel = new JLabel("Health Points:");
+		this.combatLabel = new JLabel("Atack Points:");
+		this.speedLabel = new JLabel("Speed Points:");
+		this.nameLabel = new JLabel("Name:");
+		this.numberLabel = new JLabel("Pokemon Number:");
+		this.advancedLabel = new JLabel("Advanced Information:");
+		this.healthField = new JTextField(5);
+		this.combatField = new JTextField(5);
+		this.speedField = new JTextField(5);
+		this.nameField = new JTextField(25);
+		this.numberField = new JTextField(5);
+		this.advancedArea = new JTextArea(10, 25);
+				
+		
 		
 		setupPanel();
 		setupLayout();
@@ -44,7 +62,6 @@ public class PokemonPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.setBackground(Color.RED);
-		this.add(pokemonIcon);
 		this.add(updateButton);
 		this.add(pokedexSelector);
 		this.add(pokemonLabel);
