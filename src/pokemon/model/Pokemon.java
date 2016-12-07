@@ -15,9 +15,24 @@ public abstract class Pokemon
 	
 	public String getPokemonTypes()
 	{
-		String types = "";
+		String ptypes = "This Pokemon is of type(s):\n";
+		Class<?> [] types = getClass().getInterfaces();
+		String [] pokeTypes = new String[types.length];
 		
-		return types;
+		for(int index = 0; index < types.length; index++)
+		{
+			String temp = types[index].getCanonicalName();
+			
+			pokeTypes[index] = temp;
+		}
+		
+		for(String current : pokeTypes)
+		{
+			String temp = current.replace(this.getClass().getPackage().getName() + ".",  "");
+			ptypes += temp + "\n";
+		}
+		
+		return ptypes;
 	}
 	
 	public String toString()
@@ -54,11 +69,4 @@ public abstract class Pokemon
 	public String getName() {
 		return name;
 	}
-
-	
-	
-	
-	
-	
-
 }
