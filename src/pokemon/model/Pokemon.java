@@ -15,7 +15,9 @@ public abstract class Pokemon
 	
 	public String getPokemonTypes()
 	{
+		String types = "";
 		
+		return types;
 	}
 	
 	public String toString()
