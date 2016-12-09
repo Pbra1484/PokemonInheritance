@@ -13,5 +13,10 @@ public class PokemonController
 	{
 		
 	}
+	
+	public PokemonFrame getBaseFrame()
+	{
+		return baseFrame;
+	}
 
 }
