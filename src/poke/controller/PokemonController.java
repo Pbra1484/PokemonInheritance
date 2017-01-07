@@ -18,7 +18,8 @@ public class PokemonController
 	
 	public PokemonController()
 	{
-	//	makePokedex();
+		this.pokedex = new ArrayList<Pokemon>();
+		makePokedex();
 		baseFrame = new PokemonFrame(this);
 		
 	}

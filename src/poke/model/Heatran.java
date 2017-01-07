@@ -12,7 +12,6 @@ public class Heatran extends Pokemon implements Fire, Steel
 	public Heatran()
 	{
 		super();
-		super();
 		this.name = "Heatran";
 		this.number =  485;
 		this.speed = 1;
