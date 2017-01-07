@@ -48,6 +48,7 @@ public class PokemonPanel extends JPanel
 		this.speedField = new JTextField(5);
 		this.nameField = new JTextField(25);
 		this.numberField = new JTextField(5);
+		numberField.setEditable(false);
 		this.advancedArea = new JTextArea(10, 25);
 		
 				

@@ -7,12 +7,14 @@ public abstract class Pokemon
 	private double speed;
 	private String name;
 	private int number;
+	private String advInfo;
 	
+
 	public Pokemon()
 	{
 		
 	}
-	public Pokemon(String name, int number)
+	public Pokemon(String name)
 	{
 		
 	}
@@ -74,5 +76,14 @@ public abstract class Pokemon
 	}
 	public String getName() {
 		return name;
+	}
+	public String getAdvInfo() {
+		return advInfo;
+	}
+	public void setAdvInfo(String advInfo) {
+		this.advInfo = advInfo;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 }
