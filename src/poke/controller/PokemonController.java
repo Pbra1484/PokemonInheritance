@@ -1,10 +1,12 @@
-package pokemon.controller;
+package poke.controller;
 
-import pokemon.view.PokemonFrame;
+import poke.view.PokemonFrame;
 public class PokemonController 
 {
+	
+	
 	private PokemonFrame baseFrame;
-	PokemonController()
+	public PokemonController()
 	{
 		baseFrame = new PokemonFrame(this);
 	}

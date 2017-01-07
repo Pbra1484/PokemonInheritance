@@ -1,4 +1,4 @@
-package pokemon.model;
+package poke.model;
 
 public abstract class Pokemon 
 {
@@ -8,6 +8,10 @@ public abstract class Pokemon
 	private String name;
 	private int number;
 	
+	public Pokemon()
+	{
+		
+	}
 	public Pokemon(String name, int number)
 	{
 		
