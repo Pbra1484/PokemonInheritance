@@ -28,6 +28,7 @@ public class PokemonPanel extends JPanel
 	private JTextField numberField;
 	private JTextArea advancedArea;
 	
+	
 	public PokemonPanel(PokemonController baseController)
 	{
 		super();
@@ -35,7 +36,9 @@ public class PokemonPanel extends JPanel
 		baseLayout = new SpringLayout();
 		this.pokemonIcon = new ImageIcon(getClass().getResource("images/Pokeball.png"));
 		this.updateButton = new JButton("Update");
-		this.pokedexSelector = new JComboBox(new String [] {"Latios", "Mewtwo", "Darkrai", "Entei", "Heatran"});
+		this.pokedexSelector = new JComboBox(new String [] {baseController.getPokedex().get(0).getName(), baseController.getPokedex().get(1).getName(),
+															baseController.getPokedex().get(2).getName(), baseController.getPokedex().get(3).getName(),
+															baseController.getPokedex().get(4).getName(), baseController.getPokedex().get(5).getName()});
 		this.pokemonLabel = new JLabel("The current pokemon:", pokemonIcon, JLabel.CENTER);
 		this.healthLabel = new JLabel("Health Points:");
 		this.combatLabel = new JLabel("Atack Points:");

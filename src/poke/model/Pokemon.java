@@ -41,6 +41,7 @@ public abstract class Pokemon
 		return ptypes;
 	}
 	
+
 	public String toString()
 	{
 		return "You called toString";
@@ -85,5 +86,8 @@ public abstract class Pokemon
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public void setNumber(int number) {
+		this.number = number;
 	}
 }

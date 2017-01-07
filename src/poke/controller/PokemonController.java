@@ -9,11 +9,12 @@ public class PokemonController
 	
 	private ArrayList<Pokemon> pokedex;
 	private PokemonFrame baseFrame;
-	private Latios latios;
-	private Mewtwo mewtwo;
-	private Darkrai darkrai;
-	private Entei entei;
-	private Heatran heatran;
+	public Latios latios;
+	public Mewtwo mewtwo;
+	public Darkrai darkrai;
+	public Entei entei;
+	public Heatran heatran;
+	public Latios flyingWhale;
 	
 	
 	public PokemonController()
@@ -31,6 +32,7 @@ public class PokemonController
 		darkrai = new Darkrai();
 		entei = new Entei();
 		heatran = new Heatran();
+		flyingWhale = new Latios("FlyingWhale");
 		
 		
 		
@@ -39,9 +41,14 @@ public class PokemonController
 		pokedex.add(darkrai);
 		pokedex.add(entei);
 		pokedex.add(heatran);
+		pokedex.add(flyingWhale);
 		
 		
-		
+	}
+	
+	public ArrayList<Pokemon> getPokedex()
+	{
+		return pokedex;
 	}
 	
 	public void start()
