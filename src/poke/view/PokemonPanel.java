@@ -3,7 +3,6 @@ package poke.view;
 import javax.swing.*;
 
 import poke.controller.PokemonController;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.*;
@@ -54,7 +53,16 @@ public class PokemonPanel extends JPanel
 		numberField.setEditable(false);
 		this.advancedArea = new JTextArea(10, 25);
 		
-				
+		
+		this.healthField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getHealthPoints()));
+		this.numberField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getNumber()));
+		this.speedField.setText(Double.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getSpeed()));
+		this.combatField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getAttackPoints()));
+		this.nameField.setText(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getName());
+		
+		
+		
+		this.pokemonIcon = new ImageIcon(getClass().getResource("images/" + baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getClass().getSimpleName() + ".png"));
 		
 		
 		setupPanel();
@@ -127,6 +135,58 @@ public class PokemonPanel extends JPanel
 	}
 	private void setupListeners()
 	{
+		
+		
+		updateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String name = nameField.getText();
+				int attack = Integer.parseInt(combatField.getText());
+				int health = Integer.parseInt(healthField.getText());
+				double speed =  Double.parseDouble(speedField.getText());
+				
+				baseController.updateSelected(pokedexSelector.getSelectedIndex(), name, attack, health, speed);
+				
+
+				healthField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getHealthPoints()));
+				numberField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getNumber()));
+				speedField.setText(Double.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getSpeed()));
+				combatField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getAttackPoints()));
+				nameField.setText(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getName());
+				
+				pokemonIcon = new ImageIcon(getClass().getResource("images/" + baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getClass().getSimpleName() + ".png"));
+				
+				pokedexSelector = new JComboBox(new String [] {baseController.getPokedex().get(0).getName(), baseController.getPokedex().get(1).getName(),
+																baseController.getPokedex().get(2).getName(), baseController.getPokedex().get(3).getName(),
+																baseController.getPokedex().get(4).getName(), baseController.getPokedex().get(5).getName()});
+				
+			}
+		});
+	
+		pokedexSelector.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				healthField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getHealthPoints()));
+				numberField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getNumber()));
+				speedField.setText(Double.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getSpeed()));
+				combatField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getAttackPoints()));
+				nameField.setText(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getName());
+				
+				ImageIcon tempIcon = new ImageIcon(getClass().getResource("images/" + baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getClass().getSimpleName() + ".png"));
+				
+				pokemonIcon = tempIcon;
+				
+				repaint();
+			}
+		});
+		
+		
+		
+		
+		
+		
 //		this.addMouseListener(new MouseListener()
 //				{
 //			public void mouseEntered(MouseEvent entered)

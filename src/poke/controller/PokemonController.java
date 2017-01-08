@@ -46,6 +46,20 @@ public class PokemonController
 		
 	}
 	
+	public void updateSelected(int index, String name, int attack, int health, double speed)
+	{
+		Pokemon currentPokemon = pokedex.get(index);
+		currentPokemon.setName(name);
+		currentPokemon.setAttackPoints(attack);
+		currentPokemon.setHealthPoints(health);
+		currentPokemon.setSpeed(speed);
+		
+//		
+//		pokedex.get(index).setAttackPoints(attack);
+//		pokedex.get(index).setHealthPoints(health);
+//		pokedex.get(index).setSpeed(speed);
+	}
+	
 	public ArrayList<Pokemon> getPokedex()
 	{
 		return pokedex;
