@@ -147,19 +147,19 @@ public class PokemonPanel extends JPanel
 				double speed =  Double.parseDouble(speedField.getText());
 				
 				baseController.updateSelected(pokedexSelector.getSelectedIndex(), name, attack, health, speed);
-				
-
-				healthField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getHealthPoints()));
-				numberField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getNumber()));
-				speedField.setText(Double.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getSpeed()));
-				combatField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getAttackPoints()));
-				nameField.setText(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getName());
+//				
+//
+//				healthField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getHealthPoints()));
+//				numberField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getNumber()));
+//				speedField.setText(Double.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getSpeed()));
+//				combatField.setText(Integer.toString(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getAttackPoints()));
+//				nameField.setText(baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getName());
 				
 				pokemonIcon = new ImageIcon(getClass().getResource("images/" + baseController.getPokedex().get(pokedexSelector.getSelectedIndex()).getClass().getSimpleName() + ".png"));
 				
-				pokedexSelector = new JComboBox(new String [] {baseController.getPokedex().get(0).getName(), baseController.getPokedex().get(1).getName(),
-																baseController.getPokedex().get(2).getName(), baseController.getPokedex().get(3).getName(),
-																baseController.getPokedex().get(4).getName(), baseController.getPokedex().get(5).getName()});
+//				pokedexSelector = new JComboBox(new String [] {baseController.getPokedex().get(0).getName(), baseController.getPokedex().get(1).getName(),
+//																baseController.getPokedex().get(2).getName(), baseController.getPokedex().get(3).getName(),
+//																baseController.getPokedex().get(4).getName(), baseController.getPokedex().get(5).getName()});
 				
 			}
 		});
